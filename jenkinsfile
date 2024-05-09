@@ -10,7 +10,7 @@ pipeline {
           stage('tomcat-deploy') {
               steps {
                script {
-                 playbook: 'tomcat.yml'
+                 playbook: 'tomcat.yml',
                  inventory: 'inventory'
 }
 }
