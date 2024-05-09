@@ -5,8 +5,8 @@
   tasks:
     - name: Copy WAR file from Maven build directory to Tomcat webapps
       copy:
-        src: /path/to/your/maven/build/directory/your_app.war
-        dest: /opt/tomcat/webapps/your_app.war
+        src: target/devops-app.war 
+        dest: /opt/tomcat/webapps
         remote_src: yes
     - name: Stop Tomcat
       shell: /opt/tomcat/bin/shutdown.sh
