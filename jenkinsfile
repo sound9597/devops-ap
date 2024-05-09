@@ -12,6 +12,7 @@ pipeline {
                script {
                  playbook: 'tomcat.yml',
                  inventory: 'inventory'
+                 colorized: true
 }
 }
 }
