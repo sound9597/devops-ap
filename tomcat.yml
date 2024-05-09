@@ -1,0 +1,15 @@
+---
+- name: Copy WAR file to Tomcat
+  hosts: your_tomcat_host
+  become: true
+  tasks:
+    - name: Copy WAR file from Maven build directory to Tomcat webapps
+      copy:
+        src: /path/to/your/maven/build/directory/your_app.war
+        dest: /opt/tomcat/webapps/your_app.war
+        remote_src: yes
+    - name: Stop Tomcat
+      shell: /opt/tomcat/bin/shutdown.sh
+      ignore_errors: yes
+    - name: Start Tomcat
+      shell: /opt/tomcat/bin/startup.sh
