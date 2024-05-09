@@ -1,6 +1,6 @@
 ---
 - name: Copy WAR file to Tomcat
-  hosts: your_tomcat_host
+  hosts: inventory
   become: true
   tasks:
     - name: Copy WAR file from Maven build directory to Tomcat webapps
